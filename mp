@@ -35,8 +35,10 @@ if [[ -z $1 || $1 == "help" || $1 == "h" || $1 == "-h" ]]; then
 elif [ $1 == "ls" ]; then
   list_with_arrow | less
 elif [ $1 == "near" ]; then
-  pos=$(get_pos)
-  list_with_arrow | sed -En "$(safe_from $(($pos-5))),$(safe_to $(($pos+5)))p"
+  p=$(get_pos)
+  l=$(($(tput lines) / 2 - 1))
+  echo $l
+  list_with_arrow | sed -En "$(safe_from $(($p-$l))),$(safe_to $(($p+$l)))p"
 # position
 elif [ $1 == "pos" ]; then
   track=$(get_pos)
