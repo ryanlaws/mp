@@ -1,0 +1,5 @@
+Requires: mpc (music player client) https://musicpd.org/clients/mpc/
+
+Setup: Add mp to a dir in PATH.
+
+Run mp without args or with arg 'help' or 'h' for help.
