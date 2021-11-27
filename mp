@@ -1,5 +1,4 @@
 #!/bin/bash
-# - rmr = remove range (e.g. 1 5 = remove tracks 1-5)
 get_pos(){
   mpc | sed -n 's/^.\+#\([[:digit:]]\+\)\/.\+/\1/g; 2p'
 }
