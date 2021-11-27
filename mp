@@ -35,8 +35,7 @@ elif [ $1 == "ls" ]; then
   list_with_arrow | less
 elif [ $1 == "near" ]; then
   p=$(get_pos)
-  l=$(($(tput lines) / 2 - 1))
-  echo $l
+  l=$(($(tput lines) / 4))
   list_with_arrow | sed -En "$(safe_from $(($p-$l))),$(safe_to $(($p+$l)))p"
 # position
 elif [ $1 == "pos" ]; then
